@@ -34,7 +34,8 @@ const firebaseConfig = {
 };
 
 const adminEmails = [
-  "centralwebservices@outlook.com"
+  "centralwebservices@outlook.com",
+  "hbernal@hbpowerelectronic.com"
 ];
 
 const app = initializeApp(firebaseConfig);
