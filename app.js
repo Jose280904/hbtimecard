@@ -445,6 +445,7 @@ myScheduleCalendar.addEventListener("click", async (event) => {
   await showScheduleDetailsForDate(dayBtn.dataset.date);
 });
 
+// ===== NAVIGATION & PAGE ROUTING: side menu controls and switching visible app pages =====
 function openMenu() {
   sideMenu.classList.remove("hidden");
   menuOverlay.classList.remove("hidden");
@@ -473,6 +474,7 @@ function showPage(pageId) {
   });
 }
 
+// ===== EMPLOYEE TIME CLOCK: creates punches and restores the employee’s latest clock status =====
 async function savePunch(type) {
   const user = auth.currentUser;
   if (!user) return;
@@ -546,6 +548,7 @@ async function loadClockStatus() {
   }
 }
 
+// ===== TIME-OFF REQUESTS: employee submission/history and administrator approval or rejection =====
 async function submitTimeOffRequest() {
   const user = auth.currentUser;
   if (!user) return;
@@ -716,6 +719,7 @@ function buildAdminTimeOffCard(requestId, data) {
   `;
 }
 
+// ===== EMPLOYEE SCHEDULE VIEW: weekly calendar and selected-day shift details =====
 async function loadMyWeeklySchedule() {
   const user = auth.currentUser;
   if (!user) return;
@@ -885,6 +889,7 @@ async function getTimeOffForEmployee(email) {
 }
 
 
+// ===== ADMIN SCHEDULE BUILDER: employee selection, week grid, posting, editing, and removing shifts =====
 async function loadScheduleEmployeeDropdown() {
   if (!scheduleEmployeeSelect) return;
 
@@ -1297,6 +1302,7 @@ async function getApprovedTimeOffDates(employeeEmail) {
   return dates;
 }
 
+// ===== POSTED SCHEDULE MANAGEMENT: groups and displays published schedules =====
 async function loadAdminSchedules() {
   adminScheduleRecords.innerHTML = "";
 
@@ -1418,6 +1424,7 @@ function buildAdminEmployeeScheduleGroup(employee, index) {
   return html;
 }
 
+// ===== TIME-EDIT REQUESTS: employee submission/history and administrator approval or rejection =====
 async function submitTimeEditRequest() {
   const user = auth.currentUser;
   if (!user) return;
@@ -1624,6 +1631,7 @@ function buildAdminRequestCard(requestId, data) {
   `;
 }
 
+// ===== WEEKLY SIGNATURES: employee acknowledgment and administrator signature records =====
 async function submitWeeklySignature() {
   const user = auth.currentUser;
   if (!user) return;
@@ -1749,6 +1757,7 @@ async function loadWeeklySignatures() {
   }
 }
 
+// ===== WEEKLY RECORDS & EMPLOYEE HISTORY: timecard tables and totals from punch data =====
 async function loadWeeklyRecords() {
   records.innerHTML = "";
 
@@ -1887,6 +1896,7 @@ async function loadMyHistory() {
   }
 }
 
+// ===== ADMIN PUNCH EDITOR: loads, edits, and soft-deletes punch records =====
 async function loadAdminPunchEditor() {
   adminPunchEditorRecords.innerHTML = "";
 
@@ -2057,6 +2067,7 @@ async function softDeletePunch(punchId) {
   }
 }
 
+// ===== EMPLOYEE PROFILE HELPERS: names, identity lookup, and profile UI =====
 async function saveEmployeeName(uid, email, name, isNewAccount) {
   const cleanEmail = email.toLowerCase().trim();
 
@@ -2124,6 +2135,7 @@ function updateProfileUI(user) {
   profileEmailText.textContent = cleanEmail;
 }
 
+// ===== TIMECARD CALCULATIONS: organizes punches and calculates daily/weekly hours =====
 function emptyWeek() {
   return {
     Sunday: [],
@@ -2318,6 +2330,7 @@ function formatDecimalHours(minutes) {
     .replace(/\.?0+$/, "")} hours`;
 }
 
+// ===== DATE, TIME & FORMATTING HELPERS: shared utilities used across the app =====
 function getWeekDateRange(weekValue) {
   const [yearText, weekText] = weekValue.split("-W");
   const year = Number(yearText);
@@ -2478,6 +2491,7 @@ function getStatusClass(status) {
   return "status-pending";
 }
 
+// ===== GENERAL UI & SAFETY HELPERS: password visibility and safe HTML output =====
 function togglePassword(inputId, buttonId) {
   const input = $(inputId);
   const button = $(buttonId);

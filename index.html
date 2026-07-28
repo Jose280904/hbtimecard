@@ -17,11 +17,13 @@
 </head>
 
 <body>
+  <!-- GLOBAL HEADER: logo and hamburger menu -->
   <header class="site-header">
     <button id="hamburgerBtn" class="hamburger-btn hidden">☰</button>
     <img src="images/hb_new_logo.jpeg" alt="HB Power Electronics Logo" class="logo" />
   </header>
 
+  <!-- SIDE MENU: employee navigation and permission-based admin links -->
   <nav id="sideMenu" class="side-menu hidden">
     <div class="side-menu-header">
       <h3>Menu</h3>
@@ -52,6 +54,7 @@
   <div id="menuOverlay" class="menu-overlay hidden"></div>
 
   <main class="app-shell">
+    <!-- AUTHENTICATION: existing-user login -->
     <section id="authBox" class="card auth-card">
       <h2>Login</h2>
       <p class="muted">Enter your email and password.</p>
@@ -69,6 +72,7 @@
       <p class="spam-note">Check your spam or junk folder if you do not see the reset email.</p>
     </section>
 
+    <!-- ACCOUNT CREATION: new employee registration -->
     <section id="signupBox" class="card auth-card hidden">
       <h2>Create Account</h2>
       <p class="muted">New users need to enter their name once.</p>
@@ -90,7 +94,9 @@
       <button id="backToLoginBtn" class="outline-btn">Back to Login</button>
     </section>
 
+    <!-- SIGNED-IN APPLICATION PAGES -->
     <section id="appPages" class="app-pages hidden">
+      <!-- EMPLOYEE HOME: punch controls and personal schedule -->
       <section id="clockPage" class="app-page active-page">
         <div class="home-dashboard">
           <section id="clockBox" class="card home-clock-card">
@@ -136,6 +142,7 @@
         </div>
       </section>
 
+      <!-- EMPLOYEE TIME OFF: submit and review requests -->
       <section id="timeOffPage" class="app-page hidden">
         <section id="timeOffBox" class="card">
           <h2>Time Off Request</h2>
@@ -158,6 +165,7 @@
         </section>
       </section>
 
+      <!-- EMPLOYEE TIME EDITS: request a corrected punch -->
       <section id="timeEditPage" class="app-page hidden">
         <section id="timeEditBox" class="card">
           <h2>Time Edit Request</h2>
@@ -188,6 +196,7 @@
         </section>
       </section>
 
+      <!-- EMPLOYEE PROFILE: name, email, and password reset -->
       <section id="profilePage" class="app-page hidden">
         <section id="profileBox" class="card">
           <h2>My Profile</h2>
@@ -211,6 +220,7 @@
         </section>
       </section>
 
+      <!-- EMPLOYEE HISTORY: weekly punches and calculated hours -->
       <section id="historyPage" class="app-page hidden">
         <section id="myHistoryBox" class="card">
           <h2>My Punch History</h2>
@@ -227,6 +237,7 @@
         </section>
       </section>
 
+      <!-- WEEKLY SIGNATURE: employee timecard acknowledgment -->
       <section id="signaturePage" class="app-page hidden">
         <section id="signatureBox" class="card">
           <h2>Weekly E-Signature</h2>
@@ -241,6 +252,7 @@
         </section>
       </section>
 
+      <!-- ADMIN SCHEDULE BUILDER: assign and modify shifts -->
       <section id="adminScheduleBuilderPage" class="app-page hidden admin-page">
         <section class="card">
           <h2>Schedule Builder</h2>
@@ -297,6 +309,7 @@
         </section>
       </section>
 
+      <!-- ADMIN POSTED SCHEDULES: review published schedules -->
       <section id="adminPostedSchedulesPage" class="app-page hidden admin-page">
         <section class="card">
           <h2>Posted Schedules</h2>
@@ -313,6 +326,7 @@
         </section>
       </section>
 
+      <!-- ADMIN TIME OFF: approve or reject pending requests -->
       <section id="adminTimeOffPage" class="app-page hidden admin-page">
         <section class="card">
           <h2>Time Off Approvals</h2>
@@ -326,6 +340,7 @@
         </section>
       </section>
 
+      <!-- ADMIN TIME EDITS: approve or reject punch corrections -->
       <section id="adminTimeEditPage" class="app-page hidden admin-page">
         <section class="card">
           <h2>Time Edit Approvals</h2>
